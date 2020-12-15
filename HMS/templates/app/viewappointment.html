@@ -1,0 +1,26 @@
+{% extends 'common.html' %}
+{% block suresh %}
+    <table align="center" border="2">
+    <tr>
+        <th colspan="6" style="text-align: center;color: orangered">View Appointment</th>
+    </tr>
+    <tr>
+        <th>Patient Id</th>
+        <th>Patient Name</th>
+        <th>Doctor Name</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Remove</th>
+    </tr>
+    {% for x in data %}
+        <tr>
+        <th>{{ x.Patient.Patient_id }}</th>
+        <th>{{ x.Patient.Patient_name }}</th>
+        <th>{{ x.Doctor.Doctor_name }}</th>
+        <th>{{ x.Date }}</th>
+        <th>{{ x.Time }}</th>
+            <th><a href="{% url 'delapt' %}?x={{ x.Patient.Patient_id }}"> Delete</a></th>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

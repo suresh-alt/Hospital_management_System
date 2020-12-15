@@ -1,0 +1,32 @@
+{% extends 'common.html' %}
+
+{% block suresh %}
+    <br><br><br>
+    <table align="center" border="2">
+    <tr><th colspan="11" style="color: orangered;text-align: center">View Patients</th></tr>
+    <tr>
+        <th>Doctor Id</th>
+        <th>Doctor Name</th>
+        <th>Mobile No</th>
+        <th>OPD Time</th>
+        <th>OPD Days</th>
+        <th>Spacialization</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    {% for x in data %}
+        <tr>
+
+            <th>{{ x.Doctor_id}}</th>
+            <th>{{ x.Doctor_name}}</th>
+            <th>{{ x.Mobile}}</th>
+            <th>{{ x.OPT_Time}}</th>
+            <th>{{ x.OPD_Days}}</th>
+            <th>{{ x.Specialization}}</th>
+        <th><a href="{% url 'updated' %}?pid={{ x.Doctor_id }}"> Update</a></th>
+        <th><a href="{% url 'deld' %}?pid={{ x.Doctor_id }}"> Delete</a></th>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

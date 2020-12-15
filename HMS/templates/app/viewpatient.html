@@ -1,0 +1,35 @@
+{% extends 'common.html' %}
+
+{% block suresh %}
+    <br><br><br>
+    <table align="center" border="2">
+    <tr><th colspan="11" style="color: orangered;text-align: center">View Patients</th></tr>
+    <tr>
+        <th>Patient No</th>
+        <th>patient Name</th>
+        <th>Ralative Name</th>
+        <th>CNIC</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Mobile No</th>
+        <th>Address</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    {% for x in data %}
+        <tr>
+        <th>{{ x.Patient_id }}</th>
+        <th>{{ x.Patient_name }}</th>
+        <th>{{ x.Relative_Name}}</th>
+        <th>{{ x.CNIC }}</th>
+        <th>{{ x.gender }}</th>
+        <th>{{ x.Age }}</th>
+        <th>{{ x.Mobile }}</th>
+        <th>{{ x.Address }}</th>
+            <th><a href="{% url 'up' %}?pid={{ x.Patient_id }}"> Update</a></th>
+        <th><a href="{% url 'delp' %}?pid={{ x.Patient_id }}"> Delete</a></th>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

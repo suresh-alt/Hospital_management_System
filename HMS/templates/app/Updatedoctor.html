@@ -1,0 +1,38 @@
+{% extends 'common.html' %}
+
+{% block suresh %}
+    <form action="{% url 'saveupdatedoctor' %}" method="post">
+    {% csrf_token %}
+    <table align="center" border="2">
+    <tr><th colspan="2" style="text-align: center;color: orangered">Update Doctor</th></tr>
+    <tr>
+        <th>Doctor Id</th>
+        <th><input type="number" name="t1" value="{{ data.Doctor_id}}" readonly></th>
+    </tr>
+    <tr>
+        <th>Doctor Name</th>
+        <th><input type="text" name="t2" value="{{ data.Doctor_name }}" ></th>
+    </tr>
+    <tr>
+        <th>Mobile No</th>
+        <th><input type="number" name="t3" value="{{ data.Mobile }}" ></th>
+    </tr>
+    <tr>
+        <th>OPD Time</th>
+        <th><input type="text" name="t4" value="{{ data.OPT_Time }}" ></th>
+    </tr>
+    <tr>
+        <th>OPD Days</th>
+        <th><input type="text" name="t5" value="{{ data.OPD_Days }}" ></th>
+    </tr>
+    <tr>
+        <th>Specialization</th>
+        <th><input type="text" name="t6" value="{{ data.Specialization }}" ></th>
+    </tr>
+
+    <tr>
+        <th colspan="2" style="text-align: center"><button type="submit">Update</button> </th>
+    </tr>
+    </table></form>
+
+{% endblock %}

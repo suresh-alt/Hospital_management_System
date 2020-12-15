@@ -1,0 +1,45 @@
+{% extends 'common.html' %}
+
+{% block suresh %}
+    <form action="{% url 'saveup' %}" method="post">
+    {% csrf_token %}
+    <table align="center" border="2">
+    <tr><th colspan="2" style="text-align: center;color: orangered">Update Patient</th></tr>
+    <tr>
+        <th>Patient Id</th>
+        <th><input type="number" name="t1" value="{{ data.Patient_id }}" readonly></th>
+    </tr>
+    <tr>
+        <th>Patient Name</th>
+        <th><input type="text" name="t2" value="{{ data.Patient_name }}" ></th>
+    </tr>
+    <tr>
+        <th>CNIC</th>
+        <th><input type="number" name="t3" value="{{ data.CNIC }}"> </th>
+    </tr>
+    <tr>
+        <th>Relative name</th>
+        <th><input type="text" name="t4" value="{{ data.Relative_Name }}" ></th>
+    </tr>
+    <tr>
+        <th>Gender</th>
+        <th><input type="text" name="t5" value="{{ data.gender }}" ></th>
+    </tr>
+    <tr>
+        <th>Age</th>
+        <th><input type="number" name="t6" value="{{ data.Age }}" ></th>
+    </tr>
+    <tr>
+        <th>Mobile No</th>
+        <th><input type="number" name="t7" value="{{ data.Mobile }}" ></th>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <th><input type="text" name="t8" value="{{ data.Address }}" ></th>
+    </tr>
+    <tr>
+        <th colspan="2" style="text-align: center"><button type="submit">Update</button> </th>
+    </tr>
+    </table></form>
+
+{% endblock %}

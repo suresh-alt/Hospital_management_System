@@ -1,0 +1,29 @@
+{% extends 'common.html' %}
+{% block suresh %}
+    <table align="center" border="2">
+    <tr>
+    <th colspan="8" style="color: orangered;text-align: center">View Dischargd Patient</th>
+    </tr>
+    <tr>
+    <th>Sr.No</th>
+    <th>Patient name</th>
+    <th>Disease</th>
+    <th>Discharge By</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Remove</th>
+    </tr>
+    {% for x in data %}
+        <tr>
+        <th>{{ x.s_no }}</th>
+        <th>{{ x.Patient_name }}</th>
+        <th>{{ x.Disease }}</th>
+        <th>{{ x.Discarged_By }}</th>
+        <th>{{ x.Date }}</th>
+        <th>{{ x.Time }}</th>
+            <th><a href="{% url 'deldc' %}?no={{ x.s_no }}"> Delete</a></th>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
